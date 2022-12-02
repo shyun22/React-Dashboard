@@ -5,8 +5,34 @@ import {
   SparklineTooltip,
 } from "@syncfusion/ej2-react-charts";
 
-const SparkLine = () => {
-  return <div>SparkLine</div>;
+const SparkLine = ({ id, height, width, color, data, type, currentColor }) => {
+  return (
+    <div>
+      <SparklineComponent
+        id={id}
+        height={height}
+        widdth={width}
+        lineWidth={1}
+        valueType="Numeric"
+        fill={color}
+        border={{ color: currentColor, width: 2 }}
+        dataSource={data}
+        xName="x"
+        yName="yval"
+        type={type}
+        tooltipSettings={{
+          visible: true,
+          format: "${x} : data ${yval}",
+          trackLineSettings: {
+            visible: true,
+          },
+        }}
+        markerSettings={{ visible: ["All"], size: 2.5, fill: currentColor }}
+      >
+        <Inject services={[SparklineTooltip]} />
+      </SparklineComponent>
+    </div>
+  );
 };
 
 export default SparkLine;
