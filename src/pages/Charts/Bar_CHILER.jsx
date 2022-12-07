@@ -20,7 +20,7 @@ import { ChartsHeader } from "../../components";
 import { useStateContext } from "../../contexts/ContextProvider";
 import SomeComponent from "../../components/SomeComponent";
 
-const Bar = () => {
+const Bar_CHILER = () => {
   const { currentMode } = useStateContext();
 
   return (
@@ -52,4 +52,4 @@ const Bar = () => {
   );
 };
 
-export default Bar;
+export default Bar_CHILER;

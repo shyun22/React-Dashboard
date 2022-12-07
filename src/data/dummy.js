@@ -1,23 +1,14 @@
 import React from "react";
-import {
-  AiOutlineCalendar,
-  AiOutlineShoppingCart,
-  AiOutlineAreaChart,
-  AiOutlineBarChart,
-  AiOutlineStock,
-} from "react-icons/ai";
+import { AiOutlineCalendar, AiOutlineShoppingCart } from "react-icons/ai";
 import {
   FiShoppingBag,
   FiEdit,
-  FiPieChart,
-  FiBarChart,
   FiCreditCard,
   FiStar,
   FiShoppingCart,
 } from "react-icons/fi";
 import {
   BsKanban,
-  BsBarChart,
   BsBoxSeam,
   BsCurrencyDollar,
   BsShield,
@@ -26,11 +17,11 @@ import {
 import { BiColorFill } from "react-icons/bi";
 import { IoMdContacts } from "react-icons/io";
 import { CiBatteryFull, CiMicrochip } from "react-icons/ci";
-import { RiContactsLine, RiStockLine } from "react-icons/ri";
+import { RiContactsLine } from "react-icons/ri";
 import { MdOutlineSupervisorAccount } from "react-icons/md";
-import { HiOutlineRefresh } from "react-icons/hi";
+
 import { TiTick } from "react-icons/ti";
-import { GiLouvrePyramid } from "react-icons/gi";
+
 import { GrLocation } from "react-icons/gr";
 import avatar from "./avatar.jpg";
 import avatar2 from "./avatar2.jpg";
@@ -43,7 +34,6 @@ import product4 from "./product4.jpg";
 import product5 from "./product5.jpg";
 import product6 from "./product6.jpg";
 import product7 from "./product7.jpg";
-import product8 from "./product8.jpg";
 
 export const gridOrderImage = (props) => (
   <div>
@@ -219,18 +209,6 @@ const areaChartData = [
     { x: new Date(2010, 0, 1), y: 1.5 },
     { x: new Date(2011, 0, 1), y: 2.3 },
   ],
-  [
-    { x: new Date(2002, 0, 1), y: 0.8 },
-    { x: new Date(2003, 0, 1), y: 1.3 },
-    { x: new Date(2004, 0, 1), y: 1.1 },
-    { x: new Date(2005, 0, 1), y: 1.6 },
-    { x: new Date(2006, 0, 1), y: 2 },
-    { x: new Date(2007, 0, 1), y: 1.7 },
-    { x: new Date(2008, 0, 1), y: 2.3 },
-    { x: new Date(2009, 0, 1), y: 2.7 },
-    { x: new Date(2010, 0, 1), y: 1.1 },
-    { x: new Date(2011, 0, 1), y: 2.3 },
-  ],
 ];
 
 export const areaCustomSeries = [
@@ -238,7 +216,7 @@ export const areaCustomSeries = [
     dataSource: areaChartData[0],
     xName: "x",
     yName: "y",
-    name: "USA",
+    name: "실제 사용량",
     opacity: "0.8",
     type: "SplineArea",
     width: "2",
@@ -247,16 +225,7 @@ export const areaCustomSeries = [
     dataSource: areaChartData[1],
     xName: "x",
     yName: "y",
-    name: "France",
-    opacity: "0.8",
-    type: "SplineArea",
-    width: "2",
-  },
-  {
-    dataSource: areaChartData[2],
-    xName: "x",
-    yName: "y",
-    name: "Germany",
+    name: "예상 사용량",
     opacity: "0.8",
     type: "SplineArea",
     width: "2",
@@ -265,19 +234,29 @@ export const areaCustomSeries = [
 
 export const barChartData = [
   [
-    { x: "USA", y: 46 },
-    { x: "GBR", y: 27 },
-    { x: "CHN", y: 26 },
-  ],
-  [
-    { x: "USA", y: 37 },
-    { x: "GBR", y: 23 },
-    { x: "CHN", y: 18 },
-  ],
-  [
-    { x: "USA", y: 38 },
-    { x: "GBR", y: 17 },
-    { x: "CHN", y: 26 },
+    { x: "2022.10.1", y: 46 },
+    { x: "2022.10.2", y: 30 },
+    { x: "2022.10.3", y: 48 },
+    { x: "2022.10.4", y: 42 },
+    { x: "2022.10.5", y: 41 },
+    { x: "2022.10.6", y: 37 },
+    { x: "2022.10.7", y: 33 },
+    { x: "2022.10.8", y: 44 },
+    { x: "2022.10.9", y: 48 },
+    { x: "2022.10.10", y: 50 },
+    { x: "2022.10.11", y: 40 },
+    { x: "2022.10.12", y: 29 },
+    { x: "2022.10.13", y: 38 },
+    { x: "2022.10.14", y: 39 },
+    { x: "2022.10.15", y: 40 },
+    { x: "2022.10.16", y: 42 },
+    { x: "2022.10.17", y: 43 },
+    { x: "2022.10.18", y: 42 },
+    { x: "2022.10.19", y: 42 },
+    { x: "2022.10.20", y: 44 },
+    { x: "2022.10.21", y: 45 },
+    { x: "2022.10.22", y: 46 },
+    { x: "2022.10.23", y: 48 },
   ],
 ];
 
@@ -286,35 +265,7 @@ export const barCustomSeries = [
     dataSource: barChartData[0],
     xName: "x",
     yName: "y",
-    name: "Gold",
-    type: "Column",
-    marker: {
-      dataLabel: {
-        visible: true,
-        position: "Top",
-        font: { fontWeight: "600", color: "#ffffff" },
-      },
-    },
-  },
-  {
-    dataSource: barChartData[1],
-    xName: "x",
-    yName: "y",
-    name: "Silver",
-    type: "Column",
-    marker: {
-      dataLabel: {
-        visible: true,
-        position: "Top",
-        font: { fontWeight: "600", color: "#ffffff" },
-      },
-    },
-  },
-  {
-    dataSource: barChartData[2],
-    xName: "x",
-    yName: "y",
-    name: "Bronze",
+    name: "AHU",
     type: "Column",
     marker: {
       dataLabel: {
@@ -515,7 +466,7 @@ export const links = [
     title: "Dashboard",
     links: [
       {
-        name: "ecommerce",
+        name: "Main",
         icon: <FiShoppingBag />,
       },
     ],
@@ -525,78 +476,82 @@ export const links = [
     title: "Monitoring",
     links: [
       {
-        name: "orders",
+        name: "AHU",
         icon: <AiOutlineShoppingCart />,
       },
       {
-        name: "employees",
+        name: "CHILER",
         icon: <IoMdContacts />,
       },
       {
-        name: "customers",
+        name: "BOILER",
         icon: <RiContactsLine />,
       },
     ],
   },
   {
-    title: "Report",
+    title: "ANALYSIS",
     links: [
       {
-        name: "calendar",
+        name: "AN-AHU",
         icon: <AiOutlineCalendar />,
       },
       {
-        name: "kanban",
+        name: "AN-CHILER",
         icon: <BsKanban />,
       },
       {
-        name: "editor",
+        name: "AN-BOILER",
         icon: <FiEdit />,
       },
       {
-        name: "color-picker",
+        name: "POWER",
+        icon: <BiColorFill />,
+      },
+      {
+        name: "GAS",
         icon: <BiColorFill />,
       },
     ],
   },
-  {
-    title: "Alarm",
-    links: [
-      {
-        name: "line",
-        icon: <AiOutlineStock />,
-      },
-      {
-        name: "area",
-        icon: <AiOutlineAreaChart />,
-      },
+  // {
+  //   title: "Alarm",
+  //   links: [
+  //     {
+  //       name: "line",
+  //       icon: <AiOutlineStock />,
+  //     },
+  //     {
+  //       name: "area",
+  //       icon: <AiOutlineAreaChart />,
+  //     },
 
-      {
-        name: "bar",
-        icon: <AiOutlineBarChart />,
-      },
-      {
-        name: "pie",
-        icon: <FiPieChart />,
-      },
-      {
-        name: "financial",
-        icon: <RiStockLine />,
-      },
-      {
-        name: "color-mapping",
-        icon: <BsBarChart />,
-      },
-      {
-        name: "pyramid",
-        icon: <GiLouvrePyramid />,
-      },
-      {
-        name: "stacked",
-        icon: <AiOutlineBarChart />,
-      },
-    ],
-  },
+  //     {
+  //       name: "bar",
+  //       icon: <AiOutlineBarChart />,
+  //     },
+  //     {
+  //       name: "pie",
+  //       icon: <FiPieChart />,
+  //     },
+  //     {
+  //       name: "financial",
+  //       icon: <RiStockLine />,
+  //     },
+  //     {
+  //       name: "color-mapping",
+  //       icon: <BsBarChart />,
+  //     },
+  //     {
+  //       name: "pyramid",
+  //       icon: <GiLouvrePyramid />,
+  //     },
+  //     {
+  //       name: "stacked",
+  //       icon: <AiOutlineBarChart />,
+  //     },
+  //   ],
+  // },
 ];
 
 export const cartData = [
@@ -2970,7 +2925,7 @@ export const lineCustomSeries = [
     dataSource: lineChartData[0],
     xName: "x",
     yName: "y",
-    name: "Germany",
+    name: "공조기_1",
     width: "2",
     marker: { visible: true, width: 10, height: 10 },
     type: "Line",
@@ -2980,7 +2935,7 @@ export const lineCustomSeries = [
     dataSource: lineChartData[1],
     xName: "x",
     yName: "y",
-    name: "England",
+    name: "공조기_2",
     width: "2",
     marker: { visible: true, width: 10, height: 10 },
     type: "Line",
@@ -2990,7 +2945,57 @@ export const lineCustomSeries = [
     dataSource: lineChartData[2],
     xName: "x",
     yName: "y",
-    name: "India",
+    name: "공조기_3",
+    width: "2",
+    marker: { visible: true, width: 10, height: 10 },
+    type: "Line",
+  },
+
+  {
+    dataSource: lineChartData[2],
+    xName: "x",
+    yName: "y",
+    name: "공조기_4",
+    width: "2",
+    marker: { visible: true, width: 10, height: 10 },
+    type: "Line",
+  },
+
+  {
+    dataSource: lineChartData[2],
+    xName: "x",
+    yName: "y",
+    name: "공조기_4",
+    width: "2",
+    marker: { visible: true, width: 10, height: 10 },
+    type: "Line",
+  },
+
+  {
+    dataSource: lineChartData[2],
+    xName: "x",
+    yName: "y",
+    name: "공조기_4",
+    width: "2",
+    marker: { visible: true, width: 10, height: 10 },
+    type: "Line",
+  },
+
+  {
+    dataSource: lineChartData[2],
+    xName: "x",
+    yName: "y",
+    name: "공조기_4",
+    width: "2",
+    marker: { visible: true, width: 10, height: 10 },
+    type: "Line",
+  },
+
+  {
+    dataSource: lineChartData[2],
+    xName: "x",
+    yName: "y",
+    name: "공조기_4",
     width: "2",
     marker: { visible: true, width: 10, height: 10 },
     type: "Line",

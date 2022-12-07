@@ -16,6 +16,7 @@ import {
   areaPrimaryYAxis,
 } from "../../data/dummy";
 import { useStateContext } from "../../contexts/ContextProvider";
+import SomeComponent from "../../components/SomeComponent";
 
 const Area = () => {
   const { currentMode } = useStateContext();
@@ -24,6 +25,7 @@ const Area = () => {
     <div className="m-4 md:m-10 mt-24 p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl">
       <ChartsHeader category="Area" title="Inflation Rate in percentage" />
       <div className="w-full">
+        <SomeComponent />
         <ChartComponent
           id="charts"
           primaryXAxis={areaPrimaryXAxis}

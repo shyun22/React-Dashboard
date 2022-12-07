@@ -4,27 +4,18 @@ import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 
 import { Navbar, Footer, Sidebar, ThemeSettings } from "./components";
-import {
-  Ecommerce,
-  Orders,
-  Calendar,
-  Employees,
-  Stacked,
-  Pyramid,
-  Customers,
-  Kanban,
-  Line,
-  Area,
-  Bar,
-  Pie,
-  Financial,
-  ColorPicker,
-  ColorMapping,
-  Editor,
-} from "./pages";
+import { Ecommerce } from "./pages";
 import "./App.css";
 
 import { useStateContext } from "./contexts/ContextProvider";
+import Bar_AHU from "./pages/Charts/Bar_AHU";
+import Bar_CHILER from "./pages/Charts/Bar_CHILER";
+import Bar_BOILER from "./pages/Charts/Bar_BOILER";
+import Area_AHU from "./pages/Charts/Area_AHU";
+import Area_CHILER from "./pages/Charts/Area_CHILER";
+import Area_BOILER from "./pages/Charts/Area_BOILER";
+import Line_POW from "./pages/Charts/LIne_POW";
+import ColorMapping_GAS from "./pages/Charts/ColorMapping_GAS";
 
 const App = () => {
   const {
@@ -89,26 +80,17 @@ const App = () => {
                 <Route path="/" element={<Ecommerce />} />
                 <Route path="/ecommerce" element={<Ecommerce />} />
 
-                {/* pages  */}
-                <Route path="/orders" element={<Orders />} />
-                <Route path="/employees" element={<Employees />} />
-                <Route path="/customers" element={<Customers />} />
+                {/* MONITORING  */}
+                <Route path="/AHU" element={<Bar_AHU />} />
+                <Route path="/CHILER" element={<Bar_CHILER />} />
+                <Route path="/BOILER" element={<Bar_BOILER />} />
 
                 {/* apps  */}
-                <Route path="/kanban" element={<Kanban />} />
-                <Route path="/editor" element={<Editor />} />
-                <Route path="/calendar" element={<Calendar />} />
-                <Route path="/color-picker" element={<ColorPicker />} />
-
-                {/* charts  */}
-                <Route path="/line" element={<Line />} />
-                <Route path="/area" element={<Area />} />
-                <Route path="/bar" element={<Bar />} />
-                <Route path="/pie" element={<Pie />} />
-                <Route path="/financial" element={<Financial />} />
-                <Route path="/color-mapping" element={<ColorMapping />} />
-                <Route path="/pyramid" element={<Pyramid />} />
-                <Route path="/stacked" element={<Stacked />} />
+                <Route path="/AN-AHU" element={<Area_AHU />} />
+                <Route path="/AN-CHILER" element={<Area_CHILER />} />
+                <Route path="/AN-BOILER" element={<Area_BOILER />} />
+                <Route path="/AN-POWER" element={<Line_POW />} />
+                <Route path="/AN-GAS" element={<ColorMapping_GAS />} />
               </Routes>
             </div>
             <Footer />

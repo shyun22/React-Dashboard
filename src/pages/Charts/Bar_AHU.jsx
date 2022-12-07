@@ -20,7 +20,7 @@ import { ChartsHeader } from "../../components";
 import { useStateContext } from "../../contexts/ContextProvider";
 import SomeComponent from "../../components/SomeComponent";
 
-const Bar = () => {
+const Bar_AHU = () => {
   const { currentMode } = useStateContext();
 
   return (
@@ -28,6 +28,7 @@ const Bar = () => {
       <ChartsHeader category="Bar" title="Olympic Medal Counts - RIO" />
       <div className=" w-full">
         <SomeComponent />
+
         <ChartComponent
           id="charts"
           primaryXAxis={barPrimaryXAxis}
@@ -52,4 +53,4 @@ const Bar = () => {
   );
 };
 
-export default Bar;
+export default Bar_AHU;
