@@ -16,6 +16,7 @@ import Area_CHILER from "./pages/Charts/Area_CHILER";
 import Area_BOILER from "./pages/Charts/Area_BOILER";
 import Line_POW from "./pages/Charts/LIne_POW";
 import ColorMapping_GAS from "./pages/Charts/ColorMapping_GAS";
+import Main from "./pages/Main";
 
 const App = () => {
   const {
@@ -78,7 +79,7 @@ const App = () => {
               <Routes>
                 {/* dashboard  */}
                 <Route path="/" element={<Ecommerce />} />
-                <Route path="/ecommerce" element={<Ecommerce />} />
+                <Route path="/Main" element={<Ecommerce />} />
 
                 {/* MONITORING  */}
                 <Route path="/AHU" element={<Bar_AHU />} />
@@ -89,8 +90,8 @@ const App = () => {
                 <Route path="/AN-AHU" element={<Area_AHU />} />
                 <Route path="/AN-CHILER" element={<Area_CHILER />} />
                 <Route path="/AN-BOILER" element={<Area_BOILER />} />
-                <Route path="/AN-POWER" element={<Line_POW />} />
-                <Route path="/AN-GAS" element={<ColorMapping_GAS />} />
+                <Route path="/POWER" element={<Line_POW />} />
+                <Route path="/GAS" element={<ColorMapping_GAS />} />
               </Routes>
             </div>
             <Footer />

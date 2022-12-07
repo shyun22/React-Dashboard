@@ -28,7 +28,6 @@ const Bar_AHU = () => {
       <ChartsHeader category="Bar" title="Olympic Medal Counts - RIO" />
       <div className=" w-full">
         <SomeComponent />
-
         <ChartComponent
           id="charts"
           primaryXAxis={barPrimaryXAxis}
