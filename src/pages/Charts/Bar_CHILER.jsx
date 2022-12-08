@@ -19,15 +19,32 @@ import {
 import { ChartsHeader } from "../../components";
 import { useStateContext } from "../../contexts/ContextProvider";
 import SomeComponent from "../../components/SomeComponent";
+import { DropDownListComponent } from "@syncfusion/ej2-react-dropdowns";
+import { dropdownData_CHILER } from "../../data/dummy";
+
+const DropDown = ({ currentMode }) => (
+  <div className="w-28 border-1 border-color px-2 ml-auto rounded-md">
+    <DropDownListComponent
+      id="time"
+      fields={{ text: "Time", value: "Id" }}
+      style={{ border: "none", color: currentMode === "Dark" && "white" }}
+      value="1"
+      dataSource={dropdownData_CHILER}
+      popupHeight="220px"
+      popupWidth="120px"
+    />
+  </div>
+);
 
 const Bar_CHILER = () => {
   const { currentMode } = useStateContext();
 
   return (
     <div className="m-4 md:m-10 mt-24 p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl">
-      <ChartsHeader category="Bar" title="Olympic Medal Counts - RIO" />
+      <ChartsHeader category="Bar" title="칠러 사용량" />
       <div className=" w-full">
         <SomeComponent />
+        <DropDown />
         <ChartComponent
           id="charts"
           primaryXAxis={barPrimaryXAxis}

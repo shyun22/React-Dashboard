@@ -11,7 +11,7 @@ import {
 
 import { ChartsHeader } from "../../components";
 import {
-  areaCustomSeries,
+  areaCustomSeries_AN_BOILER,
   areaPrimaryXAxis,
   areaPrimaryYAxis,
 } from "../../data/dummy";
@@ -23,7 +23,7 @@ const Area_BOILER = () => {
 
   return (
     <div className="m-4 md:m-10 mt-24 p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl">
-      <ChartsHeader category="Area" title="Inflation Rate in percentage" />
+      <ChartsHeader category="Area" title="보일러 사용량 비교 데이터" />
       <div className="w-full">
         <SomeComponent />
         <ChartComponent
@@ -37,7 +37,7 @@ const Area_BOILER = () => {
           <Inject services={[SplineAreaSeries, DateTime, Legend]} />
           <SeriesCollectionDirective>
             {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-            {areaCustomSeries.map((item, index) => (
+            {areaCustomSeries_AN_BOILER.map((item, index) => (
               <SeriesDirective key={index} {...item} />
             ))}
           </SeriesCollectionDirective>
