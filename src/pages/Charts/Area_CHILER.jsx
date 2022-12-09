@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useLayoutEffect, useState } from "react";
 import {
   ChartComponent,
   SeriesCollectionDirective,
@@ -16,16 +16,39 @@ import {
   areaPrimaryYAxis,
 } from "../../data/dummy";
 import { useStateContext } from "../../contexts/ContextProvider";
-import SomeComponent from "../../components/SomeComponent";
+
+import DateInputTemplate from "../../components/DateInputTemplate";
+import axios from "axios";
+import PATH from "../../util/PATH";
 
 const Area_CHILER = () => {
   const { currentMode } = useStateContext();
+  const [runDate, setrunDate] = useState("");
+  const { URL, AHU_TOTAL_POEWR } = PATH;
+  const dateChange = (evt) => {
+    setrunDate(
+      evt.target.value.slice(0, 4) +
+        evt.target.value.slice(5, 7) +
+        evt.target.value.slice(8, 10)
+    );
+  };
+
+  useLayoutEffect(() => {
+    axios
+      .get(`${URL}${AHU_TOTAL_POEWR}${runDate}`)
+      .then((res) => res.data)
+      .then((data) => {
+        console.log("받아오는 데이터:", data);
+      })
+      .catch(console.error);
+    console.log("보내는 데이터 :", runDate);
+  }, [runDate]);
 
   return (
     <div className="m-4 md:m-10 mt-24 p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl">
       <ChartsHeader category="Area" title="칠러 사용량 비교 데이터" />
       <div className="w-full">
-        <SomeComponent />
+        <DateInputTemplate onChange={dateChange} value={runDate} />
         <ChartComponent
           id="charts"
           primaryXAxis={areaPrimaryXAxis}

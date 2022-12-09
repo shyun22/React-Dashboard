@@ -7,7 +7,7 @@ const DateInputTemplate = ({ onChange, value, className }) => {
       name="date"
       min="2010-01-11"
       max="2011-06-05"
-      className={`text-center dark:text-gray-200 text-xl mb-12 mt-3 bg-pink-500 rounded-full px-4 py-0.5 ${className}`}
+      className={`text-center text-white dark:text-gray-200 text-xl mb-12 mt-3 bg-pink-400 rounded-full px-4 py-0.5 ${className}`}
       onChange={onChange}
       value={value}
       required

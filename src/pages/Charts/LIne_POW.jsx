@@ -10,9 +10,8 @@ import PATH from "../../util/PATH";
 
 const Line_POW = () => {
   const [runDate, setrunDate] = useState("");
-
+  const [lineChartData, setLineChartData] = useState(null);
   const { URL, AHU_TOTAL_POEWR } = PATH;
-
   const dateChange = (evt) => {
     setrunDate(
       evt.target.value.slice(0, 4) +
@@ -37,7 +36,7 @@ const Line_POW = () => {
       <ChartsHeader category="Line" title="Inflation Rate" />
       <div className="w-full">
         <DateInputTemplate onChange={dateChange} value={runDate} />
-        <LineChart_POW />
+        <LineChart_POW LinePrimaryXAxis={lineChartData} />
       </div>
     </div>
   );
